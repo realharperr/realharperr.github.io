@@ -1,93 +1,77 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>harperr</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Playfair+Display:wght@400;600;700&family=Goldman:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/x-icon" href="https://imgur.com/KHsmkJk.png">
-    <meta property="og:title" content="https://mynameisharperr" />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://mynameisharperr" />
-    <meta property="og:image" content="https://imgur.com/KHsmkJk.png" />
-    <meta property="og:description" content="personal private biosite" />
-    <meta name="theme-color" content="#C71C4B">
-    <script>
-        const originalTitle = "ht‎ ‎ tps:/‎ /har ‎ p‎e. rr‎ ";
-        let index = 0;
-      
-        function animateTitle() {
-          const title = document.title;
-          if (index < originalTitle.length) {
-            document.title = title + originalTitle[index];
-            index++;
-            setTimeout(animateTitle, 250);
-          } else {
-            setTimeout(resetTitle, 1);
-          }
-        }
-      
-        function resetTitle() {
-          document.title = "";
-          index = 0;
-          setTimeout(animateTitle, 1000);
-        }
-      
-        animateTitle();
-    </script>
 </head>
 <body>
-    <div id="enter-screen">
-        <p><span style="color:#ffffff">hello.</span></p>
-    </div>
-    <div id="content" class="hidden">
-        <div class="profile-container">
-            <img src="pfp.jpg" alt="Profile Photo" class="profile-photo">
-            <h2 class="username">Harperr</h2>
-            
-            <div class="pronouns-flag">
-                <img src="flag.png" alt="flag" class="small-flag" id="user-flag">
-                <span class="pronouns-text">she/her</span>
-            </div>
-        </div>
-        
-        <!-- НОВЫЙ ПЛЕЕР: сейчас играет -->
-        <div class="now-playing" id="nowPlaying">
-            <img src="cover.png" alt="cover" class="track-cover" id="trackCover">
-            <div class="track-info">
-                <div class="track-title" id="trackTitle">loading...</div>
-                <div class="track-artist" id="trackArtist">waiting for music</div>
-            </div>
-            <button class="music-control" id="playPauseBtn">
-                <i class="fas fa-play"></i>
-            </button>
-        </div>
-        
-        <ul class="links">
-            <li><a href="https://discord.com/users/456709019189379074" target="_blank" class="link-badge"><i class="fab fa-discord"></i><span class="tooltip">Discord</span></a></li>
-            <li><a href="https://steamcommunity.com/id/itzharperr" target="_blank" class="link-badge"><i class="fab fa-steam"></i><span class="tooltip">Steam</span></a></li>
-            <li><a href="https://www.youtube.com/@h_harperr" target="_blank" class="link-badge"><i class="fab fa-youtube"></i><span class="tooltip">Youtube</span></a></li>
-        </ul>	
-        
-        <div class="typewriter">
-            <p id="typewriter-text"></p>
-        </div>
-    </div>
 
-    <video autoplay muted loop id="background-video">
-        <source src="background.mp4" type="video/mp4">
-    </video>
-    <audio id="background-music" loop>
-        <source src="background.mp3" type="audio/mpeg">
-    </audio>
-    <audio id="screamer-sound">
-        <source src="screamer.mp3" type="audio/mpeg">
-    </audio>
-    <div id="screamer-image" class="hidden">
-        <img src="screamer.png" alt="Screamer">
+<div class="video-overlay"></div>
+
+<video autoplay muted loop id="bg-video">
+    <source src="background.mp4" type="video/mp4">
+</video>
+
+<div id="enter-screen">
+    <div class="enter-content">
+        <h1>hello.</h1>
     </div>
-    <script src="script.js"></script>
+</div>
+
+<div id="content" class="hidden">
+    <div class="main-container">
+        <div class="dec-bg">
+            <img src="dec1.png" alt="decoration" class="decoration-bg">
+        </div>
+        <div class="dec-overlay"></div>
+        <div class="left-panel">
+            <div class="avatar">
+                <img src="pfp.png" alt="avatar">
+            </div>
+            <h1 class="username">harperr</h1>
+            <div class="pronouns-container">
+                <p class="pronouns">victoria /vɪkˈtɔːriə/ (she/her)</p>
+                <img src="flag.png" alt="trans flag" class="pronouns-flag">
+            </div>
+        </div>
+
+        <div class="right-panel">
+            <div class="music-player">
+                <div class="track-info">
+                    <img id="trackCover" class="track-cover" src="cover.png" alt="cover">
+                    <div class="track-details">
+                        <div id="trackTitle" class="track-title">mist</div>
+                        <div id="trackArtist" class="track-artist">sally</div>
+                    </div>
+                </div>
+                <button id="playPauseBtn" class="play-pause-btn">
+                    <i class="fa-solid fa-play"></i>
+                </button>
+            </div>
+
+            <div class="links">
+                <a href="#" class="link-btn">
+                    <i class="fab fa-discord"></i>
+                </a>
+                <a href="#" class="link-btn">
+                    <i class="fab fa-steam"></i>
+                </a>
+                <a href="#" class="link-btn">
+                    <i class="fab fa-youtube"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<audio id="background-music" loop preload="auto">
+    <source src="background.mp3" type="audio/mpeg">
+</audio>
+
+<script src="script.js"></script>
 </body>
 </html>
